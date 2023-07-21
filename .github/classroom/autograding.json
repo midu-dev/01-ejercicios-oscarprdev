@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "Evaluation",
+      "setup": "npm install",
+      "run": "node ./test/index.js",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    }
+  ]
+}
