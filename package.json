@@ -1,0 +1,14 @@
+{
+  "name": "ejercicios-nodejs",
+  "version": "1.0.0",
+  "description": "Ejercicios clase 1 curso nodejs",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "oscarprdev",
+  "license": "ISC"
+}
