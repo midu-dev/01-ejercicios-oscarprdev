@@ -7,15 +7,17 @@ async function writeFile(filePath, data, callback) {
         const dir = path.dirname(filePath);
         await fs.mkdir(dir, { recursive: true });
     } catch (error) {
-        console.log('Error creando directorio', error);
-        process.exit(1);
+        // console.log('Error creando directorio', error);
+        // process.exit(1);
+        callback(error)
     }
 
     try {
         await fs.writeFile(filePath, data);
     } catch (error) {
-        console.log(`Error creando fichero en la ruta: ${filePath}`, error);
-        process.exit(1);
+        // console.log(`Error creando fichero en la ruta: ${filePath}`, error);
+        // process.exit(1);
+        callback(error)
     }
 
     callback();
@@ -37,7 +39,7 @@ async function readFileAndCount(word, callback) {
     try {
         const fileContent = await fs.readFile(path, 'utf-8');
 
-        count = fileContent.split(' ').filter((item) => item.replace(/[^a-zA-Z]+/g, '') === word).length;
+        count = fileContent.split(word).length - 1;
 
         return callback(null, count);
     } catch (error) {
